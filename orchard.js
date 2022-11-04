@@ -26,7 +26,7 @@
     The prices are per pound and are written
     in cents. 
 */
-
+//array of apples picked for the 7 days of the week
 const fujiAcres = [2, 3, 3, 2, 2, 2, 1];
 const galaAcres = [5, 2, 4, 3, 6, 2, 4];
 const pinkAcres = [1, 5, 4, 2, 1, 5, 4];
@@ -49,9 +49,12 @@ const pinkPrice = 0.55;
 
 // CODE HERE
 
+//add all arrays together into one big array 
 const allAcres = [...fujiAcres, ...galaAcres, ...pinkAcres];
 
+//store the total
 let totalAcres = 0;
+//loop through the array and add the code to the totals arrays
 for (let i = 0; i < allAcres.length; i++) {
   totalAcres = totalAcres + allAcres[i];
 }
@@ -70,6 +73,8 @@ console.log(totalAcres);
 */
 
 // CODE HERE
+
+//to get the average divide the total by how many days there are in a week
 const averageDailyAcres = totalAcres / 7;
 console.log(averageDailyAcres);
 
@@ -106,6 +111,8 @@ let acresLeft = 174;
 let days = 0;
 
 // CODE HERE
+
+// while loop to pick apples and keep track of the changes that happen through out the days
 while (acresLeft > 0) {
   acresLeft -= 9;
   days++;
@@ -137,7 +144,10 @@ console.log("days " + days);
 */
 
 // CODE HERE
+
+
 let fujiTons = [];
+//use foreach to mutiply each item in the array by tons  and push it to an empty array
 fujiAcres.forEach((Element) => fujiTons.push(Element * 6.5));
 let galaTons = [];
 galaAcres.forEach((Element) => galaTons.push(Element * 6.5));
@@ -166,6 +176,8 @@ console.log(pinkTons);
 */
 
 // CODE HERE
+
+//use the reduce metho to add all of the items in the array into one  and then multipe by pounds
 let fujiPounds = fujiTons.reduce((a, b) => a + b) * 2000;
 
 let galaPounds = galaTons.reduce((a, b) => a + b) * 2000;
@@ -193,6 +205,8 @@ console.log(pinkPounds + " pounds");
 
 // CODE HERE
 
+//multiply the asnwers togethers
+
 let fujiProfit = fujiPounds * fujiPrice;
 let galaProfit = galaPounds * galaPrice;
 let pinkProfit = pinkPounds * pinkPrice;
@@ -211,6 +225,6 @@ console.log("total prices per pound $" + pinkProfit);
 */
 
 // CODE HERE
-
+ //add the totals 
 const totalProfit = fujiProfit + galaProfit + pinkProfit;
 console.log("total profit $" + totalProfit);
